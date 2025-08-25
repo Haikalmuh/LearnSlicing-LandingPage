@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="section grid gap-10 py-20 md:grid-cols-2 md:items-center">
+    <section className="section grid gap-10 py-20 md:grid-cols-2 md:items-center pt-50">
       {/* Left Side: Text */}
       <div>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Right side: image + shapes */}
       <div className="relative flex justify-center md:justify-end">
         {/* Ellipse 3 (besar belakang HP) */}
-        <div className="absolute -z-10 w-[340px] h-[340px] rounded-full bg-[#F2C6B4] top-12 right-6" />
+        <div className="absolute -z-10 w-[340px] h-[340px] rounded-full bg-[#F2bfaf] top-12 right-6" />
 
         {/* Ellipse 2 (hijau, kanan atas) */}
         <div className="absolute -z-10 w-[140px] h-[140px] rounded-full border-[22px] border-[#009379] -top-6 right-0" />

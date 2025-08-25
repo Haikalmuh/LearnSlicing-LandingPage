@@ -1,78 +1,45 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; // pastikan sudah install: bun add lucide-react
-
-const navLinks = [
-  { href: "#contact", label: "Contact" },
-  { href: "#how-it-works", label: "How it works" },
-];
+import Image from "next/image";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
-      <div className="section flex items-center justify-between py-3">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <nav className="section flex items-center justify-between py-4">
         {/* Logo */}
-        <Link href="/" className="font-semibold text-lg tracking-tight">
-          Brand
-        </Link>
+        <div className="flex items-center gap-2">
+          <Image src="/icons/LogoMark.svg" alt="Logo" width={28} height={28} />
+          <span className="font-bold text-lg">
+            Landing <span className="text-[#009379] font-normal">Page</span>
+          </span>
+        </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-gray-600 hover:text-gray-900"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="flex items-center gap-6">
+          <Link
+            href="contact"
+            className="font-semibold text-[#009379] hover:text-gray-900 mr-5"
+          >
+            Contact
+          </Link>
+          <Link
+            href="#how-it-works"
+            className="gap-2 rounded-2xl px-5 py-2 w-[202px] h-[60px] font-semibold text-[#009379] bg-[#E5F4F2] hover:text-gray-900 flex justify-center items-center"
+          >
+            How it works
+          </Link>
           <Link
             href="#get-started"
-            className="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700 transition"
+            className="inline-flex gap-2 rounded-2xl w-[202px] h-[60px] bg-[#009379] px-5 py-2 text-white font-semibold hover:bg-[] transition justify-center items-center"
           >
+            <Image
+              src="/icons/RocketLaunch.svg"
+              alt="Rocket Launch"
+              width={18}
+              height={18}
+            />
             Get Started
           </Link>
-        </nav>
-
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden p-2 rounded-lg border border-gray-200"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
-          <div className="section flex flex-col gap-2 py-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="py-2 text-gray-700"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="#get-started"
-              className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700 transition"
-              onClick={() => setOpen(false)}
-            >
-              Get Started
-            </Link>
-          </div>
         </div>
-      )}
+      </nav>
     </header>
   );
 }

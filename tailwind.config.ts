@@ -12,7 +12,7 @@ const config: Config = {
         "60": "60px",
       },
       colors: {
-        brand: "#16a34a", // hijau utama
+        brand: "#009379", // hijau utama
         "brand-dark": "#15803d", // hover
       },
     },
