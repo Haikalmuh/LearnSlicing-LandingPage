@@ -11,7 +11,7 @@ export default function LogoBar() {
     ];
 
     return (
-    <section className="border-y border-gray-200 bg-white py-8">
+    <section className="mt-15 border-y border-gray-200 bg-white py-8">
       <div className="container mx-auto flex flex-wrap items-center justify-center gap-24">
         {logos.map((logo, index) => (
           <Image

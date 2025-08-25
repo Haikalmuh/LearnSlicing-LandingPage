@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Image src="/icons/LogoMark.svg" alt="Logo" width={28} height={28} />
           <span className="font-bold text-lg">
-            Landing <span className="text-[#009379] font-normal">Page</span>
+            Landing <span className="text-[#2D2D2D] font-normal">Page</span>
           </span>
         </div>
 

@@ -1,6 +1,7 @@
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
 import LogoBar from "./components/LogoBar"
+import Features from "./components/Features"
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
     <Navbar />
     <Hero />
     <LogoBar />
+    <Features />
     </>
   )
 }
